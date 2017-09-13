@@ -7,9 +7,9 @@ use CodeBot\Element\Button;
 use CodeBot\Element\Product;
 use PHPUnit\Framework\TestCase;
 
-class GenericTemplateTest extends TestCase
+class ListTemplateTest extends TestCase
 {
-    public function testGenericWithTwoProducts()
+    public function testListWithTwoProducts()
     {
         $button = new Button('web_url', null, 'https://angular.io');
         $product = new Product('Produto 1', 'https://angular.io/assets/images/logos/angular/angular.png',
@@ -18,7 +18,7 @@ class GenericTemplateTest extends TestCase
         $button2 = new Button('web_url', null, 'https://vuejs.org');
         $product2 = new Product('Produto 2', 'https://vuejs.org/images/logo.png','Curso VueJs', $button2);
 
-        $template = new GenericTemplate(1234);
+        $template = new ListTemplate(1234);
         $template->add($product);
         $template->add($product2);
         $actual = $template->message('xpto');
@@ -31,7 +31,7 @@ class GenericTemplateTest extends TestCase
                 'attachment' => [
                     'type' => 'template',
                     'payload' => [
-                        'template_type' => 'generic',
+                        'template_type' => 'list',
                         'elements' => [
                             [
                                 'title' => 'Produto 1',
