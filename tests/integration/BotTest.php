@@ -7,7 +7,7 @@ use CodeBot\Build\Solid;
 
 class BotTest extends TestCase
 {
-	private $facebookPageAccessToken = 'EAAD9eSKOVHsBAPfJ000GyXnok3ZBZCKiYd0bZBZCz8uBOyDuFhQNbgOmznS8yfw2s1JaYOHBnRY82T9qSxedk1EdzH5SGw7lSO3LGlVCAwZCVO0VAVDQG0EuVhp6eZBZCZBTgvsZAVXTidflpIJZBYHMLgHuRaXeBa4ZClukKpyGzncaovIqLIvJog9';
+	private $facebookPageAccessToken = 'FACEBOOK_PAGE_ACCESS_TOKEN';
 
 	public function testAddGetStartedButton()
 	{
@@ -62,7 +62,7 @@ class BotTest extends TestCase
 		'value' => 'Iniciar'
 		]
 		];
-		
+
 		$bot->addMenu('default', false, $call_to_actions);
 
 		$this->assertTrue(true);
